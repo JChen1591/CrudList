@@ -4,17 +4,18 @@ const ul = document.querySelector("ul");
 
 button.addEventListener("click", function()   {
     const li = document.createElement("li");
-    const input1 = document.getElementById ("name").value;
-    const input2 = document.getElementById ("link").value;
+    const input1 = document.querySelector (".name").value;
+    const input2 = document.querySelector (".link").value;
     console.log (input1, input2);
     li.textContent = input1 + " " + input2;
-        const button2 = document.createElement("button");
-            button2.setAttribute("id","remove");
-            button2.textContent = "x";
-            button2.addEventListener('click', function(){
-                
+    
+        const removebtn = document.createElement("button");
+            removebtn.setAttribute("id","remove");
+            removebtn.textContent = "x";
+            removebtn.addEventListener('click', function(){
+                this.parentElement.remove();
             })
-            li.append(button2);
+            li.append(removebtn);
     ul.append(li);
     
 })
